@@ -1,115 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sort Numbers from Alphabet</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h1 {
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        textarea {
-            width: 100%;
-            height: 100px;
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: none;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .output {
-            margin-top: 20px;
-            padding: 10px;
-            background: #e9ecef;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .actions {
-            display: flex;
-            gap: 10px;
-        }
-        .actions button {
-            flex: 1;
-        }
-    </style>
+    <title>Tes IQ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sort Numbers by Alphabet</h1>
-        <textarea id="numberInput" placeholder="Enter numbers separated by commas..."></textarea>
-        <div class="actions">
-            <button onclick="sortNumbers()">Sort</button>
-            <button onclick="resetForm()">Reset</button>
-        </div>
-        <div class="output" id="output"></div>
-    </div>
+    <header>
+        <h1>Tes IQ</h1>
+    </header>
+    <main>
+        <section id="test">
+            <form id="test-form">
+                <h2>Tes IQ</h2>
 
-    <script>
-        function sortNumbers() {
-            const numberInput = document.getElementById('numberInput').value;
-            const output = document.getElementById('output');
+                <!-- Pertanyaan 1 -->
+                <div class="question">
+                    <label for="q1">1. Apa hasil dari 7 + 6?</label>
+                    <input type="number" id="q1" name="q1" required>
+                </div>
 
-            // Mapping numbers to words for sorting purposes
-            const numberWords = [
-                "zero", "one", "two", "three", "four", "five", 
-                "six", "seven", "eight", "nine"
-            ];
+                <!-- Pertanyaan 2 -->
+                <div class="question">
+                    <label for="q2">2. Apa hasil dari 9 - 3 x 2?</label>
+                    <input type="number" id="q2" name="q2" required>
+                </div>
 
-            try {
-                // Parse input and convert to array of numbers
-                let numbers = numberInput.split(',').map(num => parseInt(num.trim(), 10));
+                <!-- Pertanyaan 3 -->
+                <div class="question">
+                    <label for="q3">3. Jika semua burung bisa terbang dan merpati adalah burung, apakah merpati bisa terbang?</label>
+                    <select id="q3" name="q3" required>
+                        <option value="">Pilih Jawaban</option>
+                        <option value="ya">Ya</option>
+                        <option value="tidak">Tidak</option>
+                    </select>
+                </div>
 
-                if (numbers.some(isNaN)) {
-                    throw new Error("Invalid input: Please enter only numbers separated by commas.");
-                }
+                <!-- Pertanyaan 4 -->
+                <div class="question">
+                    <label for="q4">4. Berapa 12 dibagi 4?</label>
+                    <input type="number" id="q4" name="q4" required>
+                </div>
 
-                // Sort numbers based on their word representation
-                numbers.sort((a, b) => {
-                    const wordA = a.toString().split('').map(digit => numberWords[digit]).join('');
-                    const wordB = b.toString().split('').map(digit => numberWords[digit]).join('');
-                    return wordA.localeCompare(wordB);
-                });
+                <!-- Pertanyaan 5 -->
+                <div class="question">
+                    <label for="q5">5. Apa warna primer dari campuran biru dan kuning?</label>
+                    <select id="q5" name="q5" required>
+                        <option value="">Pilih Jawaban</option>
+                        <option value="hijau">Hijau</option>
+                        <option value="ungu">Ungu</option>
+                        <option value="oren">Oren</option>
+                    </select>
+                </div>
 
-                // Display sorted numbers
-                output.textContent = `Sorted Numbers: ${numbers.join(', ')}`;
-            } catch (error) {
-                output.textContent = error.message;
-            }
-        }
+                <!-- Pertanyaan 6 -->
+                <div class="question">
+                    <label for="q6">6. Jika 5 + x = 10, berapa nilai x?</label>
+                    <input type="number" id="q6" name="q6" required>
+                </div>
 
-        function resetForm() {
-            document.getElementById('numberInput').value = '';
-            document.getElementById('output').textContent = '';
-        }
-    </script>
+                <!-- Pertanyaan 7 -->
+                <div class="question">
+                    <label for="q7">7. Apa hasil dari 2^3?</label>
+                    <input type="number" id="q7" name="q7" required>
+                </div>
+
+                <!-- Pertanyaan 8 -->
+                <div class="question">
+                    <label for="q8">8. Jika anjing adalah mamalia dan semua mamalia adalah hewan, apakah anjing adalah hewan?</label>
+                    <select id="q8" name="q8" required>
+                        <option value="">Pilih Jawaban</option>
+                        <option value="ya">Ya</option>
+                        <option value="tidak">Tidak</option>
+                    </select>
+                </div>
+
+                <!-- Pertanyaan 9 -->
+                <div class="question">
+                    <label for="q9">9. Apa yang lebih besar: 8/2 atau 5?</label>
+                    <select id="q9" name="q9" required>
+                        <option value="">Pilih Jawaban</option>
+                        <option value="8/2">8/2</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+                <!-- Pertanyaan 10 -->
+                <div class="question">
+                    <label for="q10">10. Jika 3 + 2 = 6, maka 3 x 2 = ?</label>
+                    <input type="number" id="q10" name="q10" required>
+                </div>
+
+                <!-- Tombol Kirim -->
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+        <section id="results"></section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
 
